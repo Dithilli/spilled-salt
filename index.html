@@ -259,6 +259,25 @@
     text-transform:uppercase;color:var(--sepia);display:block;margin-bottom:7px
   }
 
+  /* ---- annals of the substance ---- */
+  .annals-intro{font-style:italic;color:var(--ink-soft);font-size:.95em;margin:0 0 22px;line-height:1.45}
+  .annals{display:grid;gap:0}
+  @media(min-width:620px){.annals{grid-template-columns:1fr 1fr}}
+  .annal{
+    border-top:1px solid var(--rule);padding:16px 14px 16px 0
+  }
+  @media(min-width:620px){
+    .annal:nth-child(odd){padding-right:24px;border-right:1px solid var(--rule)}
+    .annal:nth-child(even){padding-left:24px;padding-right:0}
+  }
+  .annal-head{
+    font-family:"IM Fell English SC",serif;font-size:14px;letter-spacing:.08em;
+    display:block;margin-bottom:8px;color:var(--ink)
+  }
+  .annal p{margin:0;font-size:.88em;color:var(--ink-soft);line-height:1.55}
+  .annal p em{color:var(--ink);font-style:italic}
+  .annal p + p{margin-top:8px}
+
   @media (min-width:1000px){
     .sheet{zoom:1.2}
   }
@@ -322,7 +341,7 @@
   </div>
 
   <section aria-labelledby="cats-h">
-    <h2 class="leg" id="cats-h">The Eight Columns of Effect</h2>
+    <h2 class="leg" id="cats-h">The Eleven Columns of Effect</h2>
     <table class="ledger">
       <thead>
         <tr><th>No.</th><th>Manner &amp; congregation</th><th class="num">Kinds</th><th class="num">Column</th></tr>
@@ -392,6 +411,24 @@
     <div class="powers" id="meso-powers"></div>
   </section>
 
+  <section aria-labelledby="yor-h" class="subreck">
+    <div class="subreck-head">
+      <h3 id="yor-h">A Closer Reckoning — Yoruba</h3>
+      <span class="net" id="yor-net">—</span>
+    </div>
+    <p class="frame">Among the Yoruba orishas, salt divides sharply. <i>Ogun</i> — the god of iron, the forge, and all roads — accepts salt as a documented sacrificial offering at his Idanre shrine. But <i>Obatala</i> — the white-robed orisha who shapes human forms in the womb — is absolutely forbidden it. The Yoruba <i>patakí</i> holds that the trickster Esu deliberately defiled Obatala's white garments with salt. To place salt in his domain is to repeat that defilement. (These figures appear in the world tally above; this sub-reckoning shows their split more plainly.)</p>
+    <div class="powers" id="yor-powers"></div>
+  </section>
+
+  <section aria-labelledby="bal-h" class="subreck">
+    <div class="subreck-head">
+      <h3 id="bal-h">A Closer Reckoning — Baltic Hearth</h3>
+      <span class="net" id="bal-net">—</span>
+    </div>
+    <p class="frame">Lithuania's two great domestic goddesses have opposite relations to what has fallen. <i>Gabija</i>, the sacred hearth fire, receives bread and salt as her sole required offering — but it must be offered before the flame with intention and a spoken word. A scattered spill is a rite attempted wrong. <i>Žemyna</i>, the earth goddess, accepts what falls at every harvest, but she too prefers that it arrive accompanied by a prayer.</p>
+    <div class="powers" id="bal-powers"></div>
+  </section>
+
   <section aria-labelledby="recon-h">
     <h2 class="leg" id="recon-h">The Books Will Not Balance</h2>
     <div class="recon">
@@ -440,9 +477,77 @@
     </ol>
   </section>
 
+  <section aria-labelledby="annals-h">
+    <h2 class="leg" id="annals-h">Annals of the Spilt Substance</h2>
+    <p class="annals-intro">These passages are entered for completeness of the record. They neither add to nor subtract from the figures above, but bear upon the moral character of what you have done.</p>
+    <div class="annals">
+
+      <div class="annal">
+        <span class="annal-head">Why the sea is salt</span>
+        <p>In the Norse telling, the magic mill <em>Grótti</em> was seized by a sea-king and set to grinding salt. The giantesses Fenja and Menja ground through the night until the ship sank. The mill continues grinding on the seabed, which is why the sea is salt. In the Hindu telling, the sage Agastya drank the entire ocean dry to expose demons hiding in it, then released it. In China, the blood of the war-demon Chi You pooled at the site of his defeat and became the Hedong Salt Lake. All seas are somebody's spillage.</p>
+      </div>
+
+      <div class="annal">
+        <span class="annal-head">On the waking of the enslaved dead</span>
+        <p>In Haitian Vodou, a zombie is a person whose <em>ti bon ange</em> — the personal soul, the part that makes you <em>you</em> — has been captured by a bokor. The body retains motion but has no self. If a zombie tastes salt, consciousness returns. The Haitian proverb is precise: <em>Zonbi goute sel li pa mande rete</em> — a zombie who tastes salt will not ask to stay. Zora Neale Hurston documented the case of a zombie workforce given salted peanut candies; they awoke and walked home toward their graves. Salt, here, is awareness itself.</p>
+      </div>
+
+      <div class="annal">
+        <span class="annal-head">The Thursday salt</span>
+        <p>On the night of Maundy Thursday, Russian and Ukrainian households calcine coarse rock salt with rye flour in a cast-iron pan until it turns coal black, reciting the Lord's Prayer thirty-three times in silence. The resulting <em>chetvergova sol'</em> is stored behind the household icons all year. It is given to sick livestock, added to a baby's first bath, placed under pillows to reconcile quarreling spouses, and thrown at the footprints of ill-wishers. It explicitly wards against vampires. The Slow Food Foundation recognizes the Kostroma regional variety as a living heritage food.</p>
+      </div>
+
+      <div class="annal">
+        <span class="annal-head">The kuze shekani</span>
+        <p>On the eve of the last Wednesday before Nowruz, some Iranian households fill an earthenware jar with three substances: salt, charcoal, and a cheap coin. Each item has a named assignment — salt stands for the evil eye, charcoal for illness, the coin for poverty. The jar is rotated over the head of each family member in turn; the last person throws it from the roof so it shatters in the street below. The Persian name for the worst grade of evil eye is <em>cheshm-e shur</em> — the salty eye. The jar holds it; the fall destroys it.</p>
+      </div>
+
+      <div class="annal">
+        <span class="annal-head">The saltless temple</span>
+        <p>The Oppiliappan Temple at Thirunageswaram near Kumbakonam, Tamil Nadu, is one of the 108 Vishnu <em>Divyadesam</em> shrines. No salt is permitted anywhere on the premises. All ritual food — vadas, chakli, curd rice — is prepared without it. The name <em>Uppiliappan</em> derives from Tamil <em>uppili</em>: saltless. The founding covenant: when Vishnu came as a bridegroom to the sage Markandeya's daughter, he pledged to eat even food without salt. The whole temple is the standing honor of that promise.</p>
+      </div>
+
+      <div class="annal">
+        <span class="annal-head">Namak-haram</span>
+        <p>In Persian, Urdu, and Arabic: <em>namak-haram</em> — the salt-forbidden one, the ingrate, the traitor. To eat another's salt is to enter an obligation that cannot be canceled. The most famous case: Mir Jafar, commander of the Bengali Nawab's army at the Battle of Plassey (1757), conspired with the British East India Company, swore on the Quran, and stood his forces down. His ruined palace in Murshidabad is still called <em>Namak Haram Deorhi</em> — the Traitor's Gate. The proverb says: <em>namak khordan va namakdan shekastan</em> — to eat the salt and then break the salt shaker.</p>
+      </div>
+
+      <div class="annal">
+        <span class="annal-head">The ponds that cannot be sold</span>
+        <p>The Hanapēpē salt ponds on Kauaʻi, maintained by twenty-two Hawaiian family groups for over a thousand years, produce three grades: white for the table, pink to give away, and red <em>ʻalaea</em> for ceremony. The ʻalaea is mixed with volcanic red clay, understood as the blood of ancestors — genealogical cord between the living and the dead. Salt from these ponds may be gifted or traded but never sold. After the Maui wildfires of 2023, Native Hawaiian practitioners specifically requested Hanapēpē <em>pa'akai</em> to bless traumatized communities. The salt was given freely.</p>
+      </div>
+
+      <div class="annal">
+        <span class="annal-head">The naming of the infant</span>
+        <p>At a Yoruba <em>isomoloruko</em> naming ceremony, eight substances are touched to the newborn's lips in sequence: water, salt, honey, palm oil, kola nut, bitter kola, alligator pepper, and dried fish. Salt's meaning in the sequence is preservation — that what is good in this child's life shall be kept, not lost. Alligator pepper carries wisdom; salt carries the guarantee that the sweetness lasts. The eight items are not a recipe. They are a prayer in the grammar of flavor.</p>
+      </div>
+
+      <div class="annal">
+        <span class="annal-head">The salting of the newborn</span>
+        <p>In Turkey, Syria, and across the Levant, a newborn is rubbed all over the body with salt on the third day of life — sometimes on the seventh, twentieth, and fortieth as well. The practice is documented in Ezekiel 16:4, where God rebukes Jerusalem using it as a simile for proper care: <em>"nor were you rubbed with salt."</em> The spiritual rationale: the newborn, unbaptized and not yet fully in the world, is at peak vulnerability to the evil eye. Salt closes the child against it. Galen recommended the practice. Avicenna codified it. It is still done.</p>
+      </div>
+
+      <div class="annal">
+        <span class="annal-head">The sin-eater's meal</span>
+        <p>In parts of Wales, a person was paid to eat a meal of salt and bread placed directly on the chest of a newly dead body. By consuming it, they absorbed the sins of the deceased into themselves, allowing the dead to enter heaven clean. The sin-eater was typically a social outcast — the most despised person the village could find — because the transaction was considered spiritually catastrophic for the carrier. No other food. Salt and bread. The sins traveled through flavor.</p>
+      </div>
+
+      <div class="annal">
+        <span class="annal-head">The Hittite oath of salt</span>
+        <p>In 14th-century BCE Hattusa, soldiers taking the military oath grasped sinews and salt together as the priests spoke: <em>"Just as salt has no seed, even so let that man's name, seed, house, cattle and sheep perish!"</em> The traitor would be scattered like salt burned away — seedless, dispersed, leaving nothing. Salt was the curse-substance precisely because of what it cannot do: it does not germinate. It preserves what already exists and destroys the possibility of what comes next. Your spill has, inadvertently, enacted this formula.</p>
+      </div>
+
+      <div class="annal">
+        <span class="annal-head">The Sacred Lagoon and its priest</span>
+        <p>The Songor Lagoon near Ada, Ghana, is consecrated ground. The <em>Yomo</em> — an ancestral spirit, an old woman — led the Dangme people to it and established the laws of its use. A traditional Salt Priest, the <em>Libi Wornor</em>, must perform ritual authorization before the community may harvest each season. The chief cannot open the flats without this blessing. The Yomo is described as "the soul and spiritual backbone" of the clan. The lagoon is not a resource to be extracted; it is a person to be addressed.</p>
+      </div>
+
+    </div>
+  </section>
+
   <footer>
-    Reckoned across Slavic, Romanian, Gullah, Filipino, Malay, Celtic, Near-Eastern, Hebrew, Roman, Greek, Norse, Vedic & Hindu, Yoruba, Aztec, Egyptian, Shinto, Catholic, Hoodoo & Mesoamerican usage.<br>
-    Figures are nominal & for devotional amusement. The ledger does not warrant against actual revenants.
+    Reckoned across Slavic, Romanian, Gullah, Filipino, Malay, Celtic, Near-Eastern, Hebrew, Roman, Greek, Norse, Vedic &amp; Hindu, Yoruba, Aztec, Egyptian, Shinto, Catholic, Hoodoo, Mesoamerican, Hawaiian, Māori, Lithuanian, Hittite, Chinese, Persian, Korean &amp; South Indian usage.<br>
+    Figures are nominal &amp; for devotional amusement. The ledger does not warrant against actual revenants.
   </footer>
 
 </main>
@@ -451,10 +556,9 @@
 (function(){
   "use strict";
 
-  // ---- the five columns ----
   var CATS = [
     {r:"I", name:"The Arithmomania Bloc", kinds:6, tag:"ward", tagtxt:"Detain",
-     list:"Slavic upyr · Romanian strigoi & moroi · the counting-witch · Gullah Boo Hag · the grave-bound revenant — all compelled to tally every grain.",
+     list:"Slavic upyr · Romanian strigoi &amp; moroi · the counting-witch · Gullah Boo Hag · the grave-bound revenant — all compelled to tally every grain.",
      active:{interior:true,threshold:true}},
     {r:"II", name:"The Salt-as-Weapon Bloc", kinds:4, tag:"weapon", tagtxt:"Destroy",
      list:"Manananggal · aswang (Philippines) · penanggalan (Malay) · pontianak — salt sears the severed half or trailing viscera at sunrise.",
@@ -475,11 +579,19 @@
      list:"Salt commanded upon every offering · the Sabbath bread dipped in salt · the everlasting covenant unbroken (Lev. 2:13) — your spill scatters the very token of the bond.",
      active:{interior:true,threshold:true}},
     {r:"VIII", name:"The Roman Sal", kinds:4, tag:"ward", tagtxt:"Sanctify",
-     list:"Mola salsa, the salted meal of every sacrifice · the salarium that paid the legions · the salt set out for the guest · the Vestals' holy grain — Rome's whole order rests on it.",
-     active:{interior:true,threshold:true}}
+     list:"Mola salsa, the salted meal of every sacrifice · the salt set out for the guest · the Vestals' holy grain · the Roman sacramentum sworn over the altar — Rome's whole order rests on it.",
+     active:{interior:true,threshold:true}},
+    {r:"IX", name:"The Oath of Salt", kinds:3, tag:"welcome", tagtxt:"Invoke",
+     list:"The Hittite soldier grasped salt as he swore — the traitor 'shall be scattered like it' · the Bedouin bread-and-salt binds host to guest beyond the law · the Persian haqq-e namak obligates the eater forever. Your spill has scattered the matter of broken vows.",
+     active:{interior:true,threshold:true}},
+    {r:"X", name:"The Hearthfire Rite", kinds:3, tag:"ward", tagtxt:"Tend",
+     list:"Baltic Gabija requires bread and salt offered before the flame with intention · Russian chetvergova sol' calcined black on Maundy Thursday stores behind the icons all year · the Domovoi's sacred welcome is salted dark bread in a white cloth. A careless spill is a half-lit fire.",
+     active:{interior:true,threshold:true}},
+    {r:"XI", name:"The Living Threshold", kinds:4, tag:"ward", tagtxt:"Ward",
+     list:"Hawaiian pīkai — a ti-leaf dipped in salt water and sprinkled to unseat any dead who followed you home · Korean mourners are salted at the door after every funeral to stop spirits entering · Slavic Thursday salt at the doorposts against the full vampire complex · newborns in Turkey and the Levant rubbed with salt to close them against the evil eye in their first hours.",
+     active:{interior:false,threshold:true}}
   ];
 
-  // ---- tally-mark glyph (groups of five, struck) ----
   function tallySVG(n){
     var groups=Math.floor(n/5), rem=n%5, x=0, parts=[], W=0;
     function bars(count,ox,struck){
@@ -496,7 +608,6 @@
       parts.join("")+'</svg>';
   }
 
-  // ---- state ----
   var state={ grains:6500000, rate:1, place:"threshold" };
 
   function fmt(n){
@@ -521,8 +632,8 @@
   }
 
   function paintSum(){
-    var per = state.grains * state.rate;          // years for one revenant
-    var grand = per * 6;                            // across the 6 bound kinds
+    var per = state.grains * state.rate;
+    var grand = per * 6;
     document.getElementById("grandsum").textContent = fmt(grand);
     document.getElementById("perentity").textContent = fmt(per);
     document.getElementById("graincount").textContent = fmtInt(state.grains);
@@ -544,29 +655,76 @@
   wire("grp-place","data-place","place",String);
 
   // ---- the reckoning of powers ----
-  // bucket: pleased | contested | offended ; rake:"pleased" means the dawn rake wins them over
   var DEITIES = [
-    {n:"Salacia", t:"Roman", b:"pleased", w:"Goddess of the salt sea — her very name is sal. Her own substance, scattered upon your floor."},
-    {n:"Neptune & Poseidon", t:"Greco-Roman", b:"pleased", w:"Lords of the deep; all brine is their hall, and you have spread a little of it."},
-    {n:"Huixtocihuatl", t:"Aztec", b:"pleased", w:"Goddess of salt and of the salt-makers. This is precisely the offering owed to her."},
-    {n:"Watatsumi & Shiotsuchi", t:"Japanese", b:"pleased", w:"The sea-dragon lord and the Old Man of the Tide, keepers of the salt-water road."},
-    {n:"Njörðr, Ægir & Rán", t:"Norse", b:"pleased", w:"The sea-powers of the North, to whom salt is simply home."},
-    {n:"Varuna & Samudra", t:"Vedic", b:"pleased", w:"Lord of the cosmic waters and the churned ocean itself."},
-    {n:"Yemoja", t:"Yoruba", b:"pleased", w:"Mother of waters; the salt ocean is her very body."},
-    {n:"Manannán mac Lir", t:"Celtic", b:"pleased", w:"Rider of the salt waves that divide the living from the otherworld."},
-    {n:"Aphrodite & Venus", t:"Greco-Roman", b:"pleased", w:"Born of the salt sea-foam — the brine is the cradle she rose from."},
-    {n:"Auðumbla", t:"Norse", b:"pleased", w:"The primeval cow who licked the salt-rime and freed the first god. Salt stands at the root of creation."},
+    // pleased
+    {n:"Salacia", t:"Roman", b:"pleased",
+     w:"Goddess of the salt sea — her very name is sal. Her own substance, scattered upon your floor."},
+    {n:"Neptune &amp; Poseidon", t:"Greco-Roman", b:"pleased",
+     w:"Lords of the deep; all brine is their hall, and you have spread a little of it."},
+    {n:"Huixtocihuatl", t:"Aztec", b:"pleased",
+     w:"Goddess of salt and of the salt-makers. Her festival, Tecuilhuitontli, required ten days of communal song, then a sacrificial offering at the Templo Mayor. This is precisely her substance, scattered."},
+    {n:"Watatsumi &amp; Shiotsuchi", t:"Japanese", b:"pleased",
+     w:"The sea-dragon lord and the Old Man of the Tide, keepers of the salt-water road."},
+    {n:"Njörðr, Ægir &amp; Rán", t:"Norse", b:"pleased",
+     w:"The sea-powers of the North, to whom salt is simply home. Ægir brews the gods' ale in the deep; Rán nets the drowned; Njörðr governs the tidal wealth."},
+    {n:"Varuna &amp; Samudra", t:"Vedic", b:"pleased",
+     w:"Lord of the cosmic waters and the ocean's personification. Varuna governs the sea's laws; Samudra rose from it in the Ramayana to counsel Rama. Salt is the ocean's own body."},
+    {n:"Yemoja", t:"Yoruba / Diaspora", b:"pleased",
+     w:"Her oceanic sovereignty was earned crossing the Atlantic — in Yorubaland she governs the Ogun River; on the far shore of the Middle Passage, she became the sea itself. Either way, this is her domain on your floor."},
+    {n:"Manannán mac Lir", t:"Celtic", b:"pleased",
+     w:"Rider of the salt waves that divide the living from the otherworld; his cloak is the shifting sea."},
+    {n:"Aphrodite &amp; Venus", t:"Greco-Roman", b:"pleased",
+     w:"Born of the salt sea-foam — the brine is the cradle she rose from."},
+    {n:"Auðumbla", t:"Norse", b:"pleased",
+     w:"The primeval cow who licked the salt-rime from the ice and freed Búri, first of the gods. Salt stands at the root of Norse creation."},
+    {n:"Kāne", t:"Hawaiian", b:"pleased",
+     w:"The god who salted the ocean at the world's making. Salt water is called <em>wai tapu a Kāne</em> — his consecrated water, marked by his direct authorship. Priests performing purification rites with salt water consciously imitate his founding act. Whatever you have spilled is, by Hawaiian theology, his handiwork scattered."},
+    {n:"Kanaloa", t:"Hawaiian", b:"pleased",
+     w:"God of the salt-water ocean, paired with Kāne in the great fresh-salt axis of Hawaiian creation. All brine is his domain; the kitchen floor is, briefly, his."},
+    {n:"Tangaroa", t:"Māori / Polynesian", b:"pleased",
+     w:"God of the sea across Polynesia. In Māori theology, salt water (<em>wai tai</em>) carries higher spiritual charge than fresh water (<em>wai māori</em>), which is explicitly 'without sacred associations.' His realm outranks the rivers."},
+    {n:"Ogun", t:"Yoruba", b:"pleased",
+     w:"Orisha of iron, the forge, and the primal wilderness. Salt is a documented acceptable sacrificial offering at his Idanre shrine — accepted by the god of tools, roads, and righteous violence."},
+    {n:"The Saltwater Goddess 盐水女神", t:"Ba People, ancient China", b:"pleased",
+     w:"Patron deity of salt among the Ba people of the Three Gorges, recorded in the <em>Book of Later Han</em>. She offered partnership to the Ba ancestor Linjun; he refused; she became a cloud of insects; he shot her; her body became salt. Salt is literally her transformed flesh."},
+    {n:"Mariamman", t:"South Indian Hindu", b:"pleased",
+     w:"Village goddess of healing and protective fire across Tamil Nadu. She receives raw salt and neem leaves at rural shrines as a documented first offering. Salt arrives at her feet regardless of how it was placed."},
 
-    {n:"YHWH", t:"Hebrew", b:"contested", w:"The covenant of salt is everlasting and salt is commanded upon every offering — yet this is no altar, only a kitchen floor."},
-    {n:"The Shinto Kami", t:"Japanese", b:"contested", rake:"pleased", w:"A raked cone of salt purifies and invites fortune; a chaotic spill is a fumbled rite — until you cone it."},
-    {n:"Set / Typhon", t:"Egyptian", b:"contested", w:"Salt is named the foam of Typhon, his own substance loosed abroad — a favor done, but by a disreputable hand."},
+    // contested
+    {n:"YHWH", t:"Hebrew", b:"contested",
+     w:"The covenant of salt is everlasting and salt is commanded upon every offering — yet this is no altar, only a kitchen floor."},
+    {n:"The Shinto Kami", t:"Japanese", b:"contested", rake:"pleased",
+     w:"A raked cone of salt purifies and invites fortune; a chaotic spill is a fumbled rite — until you cone it at dawn."},
+    {n:"Set / Typhon", t:"Egyptian", b:"contested",
+     w:"Salt is named the foam of Typhon, his own substance loosed abroad — a favor done, but by a disreputable hand."},
+    {n:"Žemyna", t:"Lithuanian", b:"contested",
+     w:"The earth goddess receives offerings of bread and salt at sowing, first-reaping, and final harvest. What falls to the earth is hers. But she prefers that it arrive with a word spoken over it."},
+    {n:"Sedna", t:"Inuit", b:"contested",
+     w:"Governess of the salt sea and keeper of all sea animals. Shamans must dive in trance to her undersea house and comb the tangled hair she cannot comb herself to restore her favor when she withholds the hunt. She watches. She does not rate casual spills highly."},
+    {n:"Shakambhari", t:"Hindu, Rajasthan", b:"contested",
+     w:"Tutelary goddess of Sambhar, India's largest inland salt lake. The first salt of each harvest is formally carried to her feet. She is not neutral about salt — she simply requires that it arrive purposefully."},
+    {n:"Chishen 池神 / Lingqing Gong", t:"Chinese, Shanxi", b:"contested",
+     w:"The Pool God of the Hedong Salt Lake, whose state cult title <em>Lingqing Gong</em> was bestowed by Emperor Xuanzong in 777 CE. He governs China's most historically sacred salt-production site. As a deity of bureaucratic standing, he may log the incident."},
 
-    {n:"Annapurna", t:"Hindu", b:"offended", w:"Goddess of nourishment; to fling her bounty upon the ground is to slight the hand that feeds."},
-    {n:"Lakshmi", t:"Hindu", b:"offended", w:"Fortune squandered — a precious good cast down and wasted."},
-    {n:"The Domovoi", t:"Slavic", b:"offended", w:"Bread and salt is the sacred welcome; spilt, it foretells a quarrel at the hearth he guards."},
-    {n:"The Lares & Penates", t:"Roman", b:"offended", w:"Household gods of the threshold and the table, affronted by salt flung carelessly down."},
-    {n:"Zeus Xenios", t:"Greek", b:"offended", w:"Warden of guest-friendship; the salt-bond shared between host and guest, heedlessly broken."},
-    {n:"Isis & Osiris", t:"Egyptian", b:"offended", w:"To the pure cult, salt is Typhonic taint — its loosing offends the Osirian rite."}
+    // offended
+    {n:"Annapurna", t:"Hindu", b:"offended",
+     w:"Goddess of nourishment; to fling her bounty upon the ground is to slight the hand that feeds."},
+    {n:"Lakshmi", t:"Hindu", b:"offended",
+     w:"Fortune squandered — a precious good cast down and wasted."},
+    {n:"The Domovoi", t:"Slavic", b:"offended",
+     w:"Bread and salt is the sacred welcome; spilt, it foretells a quarrel at the hearth he guards. The bread-and-salt wrapped in white cloth is his sole required gift."},
+    {n:"The Lares &amp; Penates", t:"Roman", b:"offended",
+     w:"Household gods of the threshold and the table, affronted by salt flung carelessly down."},
+    {n:"Zeus Xenios", t:"Greek", b:"offended",
+     w:"Warden of guest-friendship; the salt-bond shared between host and guest, heedlessly broken."},
+    {n:"Isis &amp; Osiris", t:"Egyptian", b:"offended",
+     w:"To the pure cult, salt is Typhonic taint — its loosing offends the Osirian rite."},
+    {n:"Obatala (Orisanla)", t:"Yoruba", b:"offended",
+     w:"The white-robed orisha who shapes human bodies in the womb, patron of the newly born and the very old. Salt is absolutely taboo — in his offerings, in his devotees' diet, forever. The <em>patakí</em> holds that the trickster Esu defiled him with salt specifically. Your spill has re-enacted that stain."},
+    {n:"Gabija", t:"Lithuanian", b:"offended",
+     w:"The sacred hearth fire, goddess of the household's protection. Bread and salt are her sole required offering, given with intention before the flame. The 17th-century chronicle <em>Deliciae Prussicae</em> records the ritual. A careless spill is a rite attempted wrong."},
+    {n:"Išḫara", t:"Hittite", b:"offended",
+     w:"The goddess who governs oaths and enforces their penalties. In the Hittite military oath, soldiers grasped salt as the curse-substance: the traitor 'shall be scattered like salt, shall have no seed.' Your spill has scattered the matter she holds in her keeping."}
   ];
 
   var deityState={ raked:false };
@@ -621,7 +779,7 @@
     paintPowers();
   });
 
-  // ---- focused sub-reckonings: Egypt & Mesopotamia ----
+  // ---- focused sub-reckonings ----
   var EGYPT = [
     {n:"Anubis", t:"The Embalmer", b:{common:"contested",natron:"pleased"},
      w:"Lord of natron, the divine salt of embalming. True netjry delights him; common table-salt is simply not his sacred substance."},
@@ -631,14 +789,14 @@
      w:"Natron purifies the rite she keeps; common salt is Typhonic taint scattered in her sacred presence."},
     {n:"Thoth", t:"Scribe of Rites", b:{common:"contested",natron:"pleased"},
      w:"Natron serves the ordered rites of measure he governs; a careless scatter is merely disorder before the god of reckoning."},
-    {n:"The Wab-Priests", t:"The Pure Cult", b:{common:"offended",natron:"pleased"},
-     w:"Sworn to abstain from salt in their purity, as Plutarch records — and spilt common salt breaks the very taboo they keep."},
+    {n:"The Wab-Priests", t:"The Pure Ones", b:{common:"offended",natron:"pleased"},
+     w:"Sworn to ritual purity before temple service, which included consuming natron as purification — not avoiding salt, but requiring the sacred variety. Common salt scattered is the wrong substance in the wrong place."},
     {n:"Set / Typhon", t:"The Disreputable", b:{common:"pleased",natron:"offended"},
      w:"Salt is named his own foam; common salt loosed is his substance set free — yet divine natron is a purifier raised against him."}
   ];
 
   var MESO = [
-    {n:"The Numen of Salt", t:"“Born in a Pure Place”", b:"pleased",
+    {n:"The Numen of Salt", t:""Born in a Pure Place"", b:"pleased",
      w:"Addressed as a power in its own right in the Maqlû rite — your spill is an impromptu working that dissolves any witchcraft laid upon you."},
     {n:"Enki / Ea", t:"Lord of Incantation", b:"pleased",
      w:"Master of purification and the cleansing waters; the salt-rite is his very craft."},
@@ -648,6 +806,22 @@
      w:"He destined salt to be the food of the gods; its presence honors his decree, but its waste tempts him."},
     {n:"Tiamat", t:"The Primordial Brine", b:"contested",
      w:"The salt-water mother, slain to make heaven and earth — you have scattered a little of her very body, and the old deep stirs."}
+  ];
+
+  var YORUBA = [
+    {n:"Ogun", t:"Iron &amp; The Road", b:"pleased",
+     w:"The orisha of iron, the forge, warriors, and all who work with their hands. Salt is a documented and accepted sacrificial offering for him at his Idanre shrine, Nigeria — the god of righteous labor welcomes it."},
+    {n:"Obatala (Orisanla)", t:"Purity &amp; Creation", b:"offended",
+     w:"The white-robed orisha who shapes human bodies in the womb. Salt is absolutely taboo. The <em>patakí</em> holds that the trickster Esu defiled him with salt to desecrate his purity. Your spill has re-enacted that stain on his white."},
+    {n:"Yemoja", t:"The Waters", b:"pleased",
+     w:"In Yorubaland, she governs the Ogun River; on the far shore of the Atlantic crossing, she became the salt sea itself. Her oceanic sovereignty was <em>earned</em>. Either form: her domain on your floor."}
+  ];
+
+  var BALTIC = [
+    {n:"Gabija", t:"Lithuanian Hearth Fire", b:"offended",
+     w:"The sacred fire of the Lithuanian household, to whom bread and salt are the sole required offering — given before the flame with a spoken word. The 17th-century chronicle <em>Deliciae Prussicae</em> records the rite. The kitchen spill is its failed mirror."},
+    {n:"Žemyna", t:"Lithuanian Earth", b:"contested",
+     w:"The earth goddess receives offerings of bread and salt at sowing, first-reaping, and final harvest across the full agricultural year. She is accustomed to receiving what falls to her. She still notices when it was not meant for her."}
   ];
 
   var egyptState={ salt:"common" };
@@ -677,6 +851,12 @@
   function renderMeso(){
     document.getElementById("meso-net").textContent = "Net "+triptych("meso-powers",MESO);
   }
+  function renderYoruba(){
+    document.getElementById("yor-net").textContent = "Net "+triptych("yor-powers",YORUBA);
+  }
+  function renderBaltic(){
+    document.getElementById("bal-net").textContent = "Net "+triptych("bal-powers",BALTIC);
+  }
 
   var egySalt=document.getElementById("grp-egy-salt");
   egySalt.addEventListener("click",function(e){
@@ -687,11 +867,10 @@
     renderEgypt();
   });
 
-  // dateline flavor
   document.getElementById("dateline").textContent =
     "Entered " + new Date().toLocaleDateString("en-US",{year:"numeric",month:"long",day:"numeric"});
 
-  paintCats(); paintSum(); paintPowers(); renderEgypt(); renderMeso();
+  paintCats(); paintSum(); paintPowers(); renderEgypt(); renderMeso(); renderYoruba(); renderBaltic();
 })();
 </script>
 </body>
