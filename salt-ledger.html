@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>An Accounting of One Spilt Vessel of Salt</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=IM+Fell+English:ital@0;1&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Cutive+Mono&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#e7e0cc;
+    --paper-2:#ddd5bd;
+    --ink:#241c14;
+    --ink-soft:#4a3f30;
+    --sepia:#6f6149;
+    --oxblood:#8a2b1e;
+    --indigo:#3c4a5e;
+    --verdigris:#3f6b5e;
+    --rule:#b9ad8e;
+    --rule-red:rgba(138,43,30,.42);
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"EB Garamond",Georgia,serif;
+    font-size:18px;
+    line-height:1.5;
+    background-image:
+      radial-gradient(circle at 18% 12%,rgba(111,97,73,.10),transparent 60%),
+      radial-gradient(circle at 82% 78%,rgba(60,74,94,.08),transparent 55%);
+  }
+  .sheet{
+    max-width:760px;margin:0 auto;padding:28px 20px 80px;
+    background-image:repeating-linear-gradient(0deg,transparent,transparent 26px,var(--rule-red) 26px,var(--rule-red) 27px);
+    background-position:0 19px;
+  }
+
+  /* ---- masthead ---- */
+  .mast{border-bottom:2px solid var(--ink);padding-bottom:14px;margin-bottom:6px}
+  .mast .eyebrow{
+    font-family:"Cutive Mono",monospace;font-size:11px;letter-spacing:.28em;
+    text-transform:uppercase;color:var(--sepia);margin:0 0 10px
+  }
+  h1{
+    font-family:"IM Fell English SC",serif;font-weight:400;
+    font-size:clamp(30px,8vw,52px);line-height:1.02;margin:0;letter-spacing:.01em
+  }
+  .subhead{font-style:italic;color:var(--ink-soft);margin:8px 0 0;font-size:1.02em}
+  .folio{
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
+    font-family:"Cutive Mono",monospace;font-size:11px;letter-spacing:.12em;
+    color:var(--sepia);text-transform:uppercase;margin-top:14px
+  }
+
+  section{margin-top:40px}
+  .leg{
+    font-family:"IM Fell English SC",serif;font-size:13px;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--oxblood);
+    display:flex;align-items:center;gap:12px;margin:0 0 16px
+  }
+  .leg::after{content:"";flex:1;height:1px;background:var(--rule)}
+
+  /* ---- terms / controls ---- */
+  .terms{display:grid;gap:18px}
+  .term{}
+  .term > .lab{
+    font-family:"Cutive Mono",monospace;font-size:11px;letter-spacing:.2em;
+    text-transform:uppercase;color:var(--sepia);display:block;margin-bottom:7px
+  }
+  .opts{display:flex;flex-wrap:wrap;gap:0;border:1px solid var(--ink)}
+  .opts button{
+    flex:1 1 auto;min-width:max-content;
+    font-family:"EB Garamond",serif;font-size:15px;
+    background:transparent;color:var(--ink-soft);
+    border:none;border-right:1px solid var(--rule);
+    padding:11px 12px;cursor:pointer;transition:background .15s,color .15s;
+    line-height:1.15
+  }
+  .opts button:last-child{border-right:none}
+  .opts button .sub{display:block;font-family:"Cutive Mono",monospace;font-size:10px;letter-spacing:.06em;color:var(--sepia);margin-top:3px}
+  .opts button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+  .opts button[aria-pressed="true"] .sub{color:rgba(231,224,204,.7)}
+  .opts button:focus-visible{outline:3px solid var(--verdigris);outline-offset:-3px}
+
+  /* ---- the grand sum (hero) ---- */
+  .reckon{
+    margin-top:40px;border:2px solid var(--ink);background:var(--paper-2);
+    padding:24px 22px 20px;position:relative
+  }
+  .reckon .cap{
+    font-family:"IM Fell English SC",serif;letter-spacing:.16em;font-size:13px;
+    text-transform:uppercase;color:var(--ink-soft);margin:0
+  }
+  .sum{
+    font-family:"Cutive Mono",monospace;font-weight:400;
+    font-size:clamp(38px,12vw,76px);line-height:1;margin:6px 0 2px;
+    color:var(--oxblood);letter-spacing:-.02em;
+    border-bottom:3px double var(--ink);padding-bottom:10px;
+    overflow-wrap:anywhere
+  }
+  .sum-unit{font-family:"IM Fell English",serif;font-style:italic;font-size:1rem;color:var(--ink-soft);display:block;margin-top:10px}
+  .perline{
+    font-family:"Cutive Mono",monospace;font-size:12px;color:var(--sepia);
+    margin-top:12px;line-height:1.7
+  }
+  .perline b{color:var(--ink)}
+
+  /* ---- ledger of categories ---- */
+  table.ledger{width:100%;border-collapse:collapse;font-size:16px}
+  table.ledger th{
+    font-family:"Cutive Mono",monospace;font-weight:400;font-size:10px;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--sepia);
+    text-align:left;padding:0 6px 8px;border-bottom:1px solid var(--ink)
+  }
+  table.ledger th.num,table.ledger td.num{text-align:right}
+  table.ledger td{padding:13.5px 6px;border-bottom:1px solid var(--rule);vertical-align:top}
+  .roman{font-family:"IM Fell English SC",serif;font-size:14px;color:var(--oxblood);white-space:nowrap}
+  .cat-name{font-family:"IM Fell English",serif;font-style:italic;font-size:1.05em;display:block;margin-bottom:2px}
+  .cat-list{font-size:.82em;color:var(--ink-soft);line-height:1.35}
+  .tally{display:inline-flex;gap:3px;align-items:flex-end;height:18px}
+  .tag{
+    font-family:"Cutive Mono",monospace;font-size:9px;letter-spacing:.12em;
+    text-transform:uppercase;padding:3px 6px;border:1px solid;white-space:nowrap;display:inline-block
+  }
+  .tag.ward{color:var(--ink);border-color:var(--ink)}
+  .tag.weapon{color:var(--oxblood);border-color:var(--oxblood)}
+  .tag.welcome{color:var(--indigo);border-color:var(--indigo)}
+  .tag.omen{color:var(--verdigris);border-color:var(--verdigris)}
+  tr.dim{opacity:.34}
+  tr.dim .tag{filter:grayscale(1)}
+
+  /* ---- reconciliation ---- */
+  .recon{display:grid;gap:0;border:2px solid var(--ink)}
+  @media(min-width:620px){.recon{grid-template-columns:1fr 1fr}}
+  .recon .col{padding:18px 18px 20px}
+  .recon .col:first-child{border-bottom:1px solid var(--ink)}
+  @media(min-width:620px){.recon .col:first-child{border-bottom:none;border-right:1px solid var(--ink)}}
+  .recon h3{
+    font-family:"IM Fell English SC",serif;font-weight:400;font-size:17px;
+    letter-spacing:.06em;margin:0 0 4px
+  }
+  .recon .motto{font-style:italic;color:var(--sepia);font-size:.9em;margin:0 0 14px}
+  .recon ul{list-style:none;margin:0;padding:0}
+  .recon li{padding:5px 0 5px 22px;position:relative;font-size:.95em;line-height:1.35}
+  .recon li.ok::before{content:"✓";position:absolute;left:0;color:var(--verdigris);font-weight:700}
+  .recon li.no::before{content:"✗";position:absolute;left:0;color:var(--oxblood);font-weight:700}
+  .verdict{
+    margin-top:14px;text-align:center;font-family:"Cutive Mono",monospace;
+    font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--oxblood)
+  }
+
+  /* ---- protocol ---- */
+  ol.proto{list-style:none;counter-reset:step;margin:0;padding:0}
+  ol.proto li{
+    counter-increment:step;position:relative;padding:0 0 18px 52px;
+    border-left:1px solid var(--rule);margin-left:16px
+  }
+  ol.proto li:last-child{border-left:1px solid transparent}
+  ol.proto li::before{
+    content:counter(step);position:absolute;left:-16px;top:-2px;
+    width:32px;height:32px;background:var(--paper);border:1px solid var(--ink);
+    border-radius:50%;display:flex;align-items:center;justify-content:center;
+    font-family:"Cutive Mono",monospace;font-size:13px;color:var(--oxblood)
+  }
+  ol.proto .when{
+    font-family:"Cutive Mono",monospace;font-size:10px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--sepia);display:block;margin-bottom:2px
+  }
+  ol.proto .act{font-family:"IM Fell English",serif;font-style:italic;font-size:1.08em}
+  ol.proto p{margin:3px 0 0;font-size:.92em;color:var(--ink-soft)}
+
+  footer{
+    margin-top:54px;padding-top:16px;border-top:2px solid var(--ink);
+    font-family:"Cutive Mono",monospace;font-size:10.5px;letter-spacing:.1em;
+    color:var(--sepia);text-transform:uppercase;line-height:1.8
+  }
+
+  /* ---- reckoning of powers (deities) ---- */
+  .divsum{
+    border:2px solid var(--ink);background:var(--paper-2);
+    padding:20px 20px 18px;margin-bottom:26px
+  }
+  .divsum .cap{
+    font-family:"IM Fell English SC",serif;letter-spacing:.16em;font-size:13px;
+    text-transform:uppercase;color:var(--ink-soft);margin:0 0 12px
+  }
+  .divcounts{display:flex;flex-wrap:wrap;gap:14px 26px;align-items:flex-end}
+  .divcount{flex:0 0 auto}
+  .divcount .n{
+    font-family:"Cutive Mono",monospace;font-size:30px;line-height:1;display:block
+  }
+  .divcount .k{
+    font-family:"Cutive Mono",monospace;font-size:10px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--sepia);margin-top:5px;display:block
+  }
+  .divcount.pleased .n{color:var(--indigo)}
+  .divcount.contested .n{color:var(--sepia)}
+  .divcount.offended .n{color:var(--oxblood)}
+  .divcount .tly{margin-top:6px;color:inherit}
+  .divcount.pleased .tly{color:var(--indigo)}
+  .divcount.offended .tly{color:var(--oxblood)}
+  .divcount.contested .tly{color:var(--sepia)}
+  .netline{
+    margin:16px 0 0;padding-top:14px;border-top:3px double var(--ink);
+    font-family:"IM Fell English",serif;font-style:italic;font-size:1.1em;line-height:1.4
+  }
+  .netline b{font-style:normal;font-family:"Cutive Mono",monospace}
+
+  .rake{margin:16px 0 0}
+  .rake .lab{
+    font-family:"Cutive Mono",monospace;font-size:11px;letter-spacing:.2em;
+    text-transform:uppercase;color:var(--sepia);display:block;margin-bottom:7px
+  }
+
+  .powers{display:grid;gap:18px}
+  @media(min-width:720px){.powers{grid-template-columns:repeat(3,1fr)}}
+  .pcol{border-top:2px solid var(--ink);padding-top:10px}
+  .pcol h3{
+    font-family:"IM Fell English SC",serif;font-weight:400;font-size:15px;
+    letter-spacing:.1em;margin:0 0 4px;display:flex;justify-content:space-between;align-items:baseline
+  }
+  .pcol.pleased h3{color:var(--indigo)}
+  .pcol.contested h3{color:var(--sepia)}
+  .pcol.offended h3{color:var(--oxblood)}
+  .pcol h3 .c{font-family:"Cutive Mono",monospace;font-size:13px}
+  .deity{padding:10px 0;border-bottom:1px solid var(--rule)}
+  .deity .dn{font-family:"IM Fell English",serif;font-style:italic;font-size:1.05em;display:block}
+  .deity .dt{
+    font-family:"Cutive Mono",monospace;font-size:9.5px;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--sepia);display:block;margin:2px 0 4px
+  }
+  .deity .dw{font-size:.86em;color:var(--ink-soft);line-height:1.4}
+  .deity.moved{background:rgba(60,74,94,.08)}
+
+  /* ---- focused sub-reckonings ---- */
+  .subreck{margin-top:38px}
+  .subreck-head{
+    display:flex;justify-content:space-between;align-items:baseline;gap:12px;
+    border-bottom:1px solid var(--ink);padding-bottom:8px;margin-bottom:12px
+  }
+  .subreck-head h3{
+    font-family:"IM Fell English SC",serif;font-weight:400;font-size:19px;
+    letter-spacing:.1em;margin:0;color:var(--ink)
+  }
+  .subreck-head .net{
+    font-family:"Cutive Mono",monospace;font-size:13px;letter-spacing:.1em;
+    color:var(--oxblood);white-space:nowrap
+  }
+  .subreck .frame{
+    font-style:italic;color:var(--ink-soft);font-size:.95em;margin:0 0 14px;line-height:1.45
+  }
+  .subreck .salt-toggle{margin:0 0 18px}
+  .subreck .salt-toggle .lab{
+    font-family:"Cutive Mono",monospace;font-size:11px;letter-spacing:.2em;
+    text-transform:uppercase;color:var(--sepia);display:block;margin-bottom:7px
+  }
+
+  @media (prefers-reduced-motion: no-preference){
+    .sum{transition:color .2s}
+    tr,.tag{transition:opacity .25s,filter .25s}
+  }
+</style>
+</head>
+<body>
+<main class="sheet">
+
+  <header class="mast">
+    <p class="eyebrow">Liber Salis &nbsp;·&nbsp; Folio the First</p>
+    <h1>An Accounting of One<br>Spilt Vessel of Salt</h1>
+    <p class="subhead">Reckoned upon the assumption that every faith, myth, and tale told by mankind holds equally and simultaneously true.</p>
+    <div class="folio">
+      <span>Entered for the account of: D. Adams</span>
+      <span id="dateline">Anno —</span>
+    </div>
+  </header>
+
+  <section aria-labelledby="terms-h">
+    <h2 class="leg" id="terms-h">Terms of the Spill</h2>
+    <div class="terms">
+      <div class="term">
+        <span class="lab">Measure spilt</span>
+        <div class="opts" id="grp-amount" role="group" aria-label="Amount spilt">
+          <button data-grains="500" aria-pressed="false">A pinch<span class="sub">~500 grains</span></button>
+          <button data-grains="50000" aria-pressed="false">A shaker<span class="sub">~50,000</span></button>
+          <button data-grains="6500000" aria-pressed="true">Full cylinder<span class="sub">~6.5 million</span></button>
+          <button data-grains="26000000" aria-pressed="false">Bulk sack<span class="sub">~26 million</span></button>
+        </div>
+      </div>
+      <div class="term">
+        <span class="lab">Rate of compelled counting</span>
+        <div class="opts" id="grp-rate" role="group" aria-label="Counting rate">
+          <button data-rate="1" aria-pressed="true">One grain / year<span class="sub">the classic telling</span></button>
+          <button data-rate="0.0027397" aria-pressed="false">One grain / night<span class="sub">the swifter telling</span></button>
+        </div>
+      </div>
+      <div class="term">
+        <span class="lab">Where the vessel struck</span>
+        <div class="opts" id="grp-place" role="group" aria-label="Place of spill">
+          <button data-place="interior" aria-pressed="false">Open floor<span class="sub">a defensive pool</span></button>
+          <button data-place="threshold" aria-pressed="true">Across a threshold<span class="sub">full machinery</span></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="reckon" aria-live="polite">
+    <p class="cap">Sum carried — total detention imposed</p>
+    <div class="sum" id="grandsum">—</div>
+    <span class="sum-unit">entity-years, levied upon every member of the counting-bound &nbsp;(the arithmomania bloc, 6 kinds)</span>
+    <div class="perline">
+      Per single revenant: <b id="perentity">—</b> years to tally your grains.<br>
+      Grains in trap: <b id="graincount">—</b> &nbsp;·&nbsp; bound kinds: <b>6</b>
+    </div>
+  </div>
+
+  <section aria-labelledby="cats-h">
+    <h2 class="leg" id="cats-h">The Eight Columns of Effect</h2>
+    <table class="ledger">
+      <thead>
+        <tr><th>No.</th><th>Manner &amp; congregation</th><th class="num">Kinds</th><th class="num">Column</th></tr>
+      </thead>
+      <tbody id="catbody"><!-- filled by script --></tbody>
+    </table>
+  </section>
+
+  <section aria-labelledby="powers-h">
+    <h2 class="leg" id="powers-h">The Reckoning of Powers</h2>
+
+    <div class="divsum" aria-live="polite">
+      <p class="cap">How many gods you have pleased or offended</p>
+      <div class="divcounts">
+        <div class="divcount pleased">
+          <span class="n" id="n-pleased">—</span>
+          <span class="tly" id="t-pleased"></span>
+          <span class="k">Pleased</span>
+        </div>
+        <div class="divcount contested">
+          <span class="n" id="n-contested">—</span>
+          <span class="tly" id="t-contested"></span>
+          <span class="k">In the balance</span>
+        </div>
+        <div class="divcount offended">
+          <span class="n" id="n-offended">—</span>
+          <span class="tly" id="t-offended"></span>
+          <span class="k">Offended</span>
+        </div>
+      </div>
+      <p class="netline" id="netline">—</p>
+
+      <div class="rake">
+        <span class="lab">The dawn rake — gather the spill into a cone?</span>
+        <div class="opts" id="grp-rake" role="group" aria-label="Perform the dawn rake">
+          <button data-rake="no" aria-pressed="true">Not yet<span class="sub">spill left scattered</span></button>
+          <button data-rake="yes" aria-pressed="false">Raked at dawn<span class="sub">a proper morijio</span></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="powers" id="powers"><!-- filled by script --></div>
+  </section>
+
+  <section aria-labelledby="egy-h" class="subreck">
+    <div class="subreck-head">
+      <h3 id="egy-h">A Closer Reckoning — Egypt</h3>
+      <span class="net" id="egy-net">—</span>
+    </div>
+    <p class="frame">In Egypt, salt is two opposed substances at once. <i>Natron</i> — netjry, the "divine salt" — preserves the blessed dead and purifies the temple. But common sea-salt is the very <i>foam of Typhon</i>, which the priests shunned. So Egypt's whole verdict turns on a single question: what did you actually spill? (This refines Set and Isis &amp; Osiris from the world tally above.)</p>
+    <div class="salt-toggle">
+      <span class="lab">What manner of salt was it?</span>
+      <div class="opts" id="grp-egy-salt" role="group" aria-label="Manner of salt">
+        <button data-salt="common" aria-pressed="true">Common table-salt<span class="sub">the foam of Typhon</span></button>
+        <button data-salt="natron" aria-pressed="false">Sacred natron<span class="sub">the divine netjry</span></button>
+      </div>
+    </div>
+    <div class="powers" id="egy-powers"></div>
+  </section>
+
+  <section aria-labelledby="meso-h" class="subreck">
+    <div class="subreck-head">
+      <h3 id="meso-h">A Closer Reckoning — Mesopotamia</h3>
+      <span class="net" id="meso-net">—</span>
+    </div>
+    <p class="frame">Here salt is overwhelmingly holy. In the great anti-witchcraft rite of <i>Maqlû</i>, salt is addressed as a power in its own right — "O Salt, created in a pure place" — and begged to dissolve any sorcery laid upon the speaker. So your spill is, by accident, a small spell-breaking working. The land of the two rivers looks kindly on it.</p>
+    <div class="powers" id="meso-powers"></div>
+  </section>
+
+  <section aria-labelledby="recon-h">
+    <h2 class="leg" id="recon-h">The Books Will Not Balance</h2>
+    <div class="recon">
+      <div class="col">
+        <h3>Should you leave it</h3>
+        <p class="motto">— spread wide, and sleep behind the line</p>
+        <ul>
+          <li class="ok">Wards &amp; weapons held at full strength</li>
+          <li class="ok">Every counter kept tallying till dawn</li>
+          <li class="no">The bad-luck omen stands unremitted</li>
+          <li class="no">A botched, scattered <i>morijio</i> offends</li>
+        </ul>
+      </div>
+      <div class="col">
+        <h3>Should you gather it</h3>
+        <p class="motto">— sweep up, and cast the pinch behind you</p>
+        <ul>
+          <li class="ok">The Western omen is canceled clean</li>
+          <li class="ok">The shoulder-Devil takes salt in the eye</li>
+          <li class="no">The counting-trap is emptied mid-tally</li>
+          <li class="no">The aswang-weapon is disarmed</li>
+        </ul>
+      </div>
+    </div>
+    <p class="verdict">No single act satisfies both columns — hence the protocol</p>
+  </section>
+
+  <section aria-labelledby="proto-h">
+    <h2 class="leg" id="proto-h">The Reconciling Protocol</h2>
+    <ol class="proto">
+      <li>
+        <span class="when">At once</span>
+        <span class="act">Cast one pinch over the left shoulder.</span>
+        <p>Settles the Western omen and strikes the Devil who waits there. Costs you almost nothing from the heap.</p>
+      </li>
+      <li>
+        <span class="when">Through the night</span>
+        <span class="act">Leave the main spill across the threshold.</span>
+        <p>Holds the counting-trap, the repulsion-wall, and the Southeast Asian weapon at full power while the dark hours run.</p>
+      </li>
+      <li>
+        <span class="when">At first light</span>
+        <span class="act">Rake the spent salt into a single cone.</span>
+        <p>Converts the used ward into a proper Shinto <i>morijio</i> — retroactively squaring the purification column and closing the books clean.</p>
+      </li>
+    </ol>
+  </section>
+
+  <footer>
+    Reckoned across Slavic, Romanian, Gullah, Filipino, Malay, Celtic, Near-Eastern, Hebrew, Roman, Greek, Norse, Vedic & Hindu, Yoruba, Aztec, Egyptian, Shinto, Catholic, Hoodoo & Mesoamerican usage.<br>
+    Figures are nominal & for devotional amusement. The ledger does not warrant against actual revenants.
+  </footer>
+
+</main>
+
+<script>
+(function(){
+  "use strict";
+
+  // ---- the five columns ----
+  var CATS = [
+    {r:"I", name:"The Arithmomania Bloc", kinds:6, tag:"ward", tagtxt:"Detain",
+     list:"Slavic upyr · Romanian strigoi & moroi · the counting-witch · Gullah Boo Hag · the grave-bound revenant — all compelled to tally every grain.",
+     active:{interior:true,threshold:true}},
+    {r:"II", name:"The Salt-as-Weapon Bloc", kinds:4, tag:"weapon", tagtxt:"Destroy",
+     list:"Manananggal · aswang (Philippines) · penanggalan (Malay) · pontianak — salt sears the severed half or trailing viscera at sunrise.",
+     active:{interior:false,threshold:true}},
+    {r:"III", name:"The General Repulsion Bloc", kinds:6, tag:"ward", tagtxt:"Bar",
+     list:"Djinn of folk Islam · the Celtic sídhe · witches at large · the evil eye (nazar, mal de ojo) · restless ghosts · the 72 Goetic demons.",
+     active:{interior:true,threshold:true}},
+    {r:"IV", name:"The Purification Bloc", kinds:4, tag:"welcome", tagtxt:"Welcome",
+     list:"Shinto morijio · Japanese funeral salt · Catholic blessed salt · the honored dead of the ofrenda — to whom scattered salt is a kindness, not a wall.",
+     active:{interior:true,threshold:true}},
+    {r:"V", name:"The Omens Incurred", kinds:4, tag:"omen", tagtxt:"Befall",
+     list:"Coming misfortune · a quarrel foretold · tears to be wept · the betrayal of Judas at the upset cellar — laid against your own account.",
+     active:{interior:true,threshold:true}},
+    {r:"VI", name:"The Hoodoo Workings", kinds:4, tag:"weapon", tagtxt:"Banish",
+     list:"Cleansing baths · salt-lines laid at the sill · black salt to drive off the crossing · sown earth to break a curse — the conjurer's spilt salt is a working half-done.",
+     active:{interior:true,threshold:true}},
+    {r:"VII", name:"The Covenant of Salt", kinds:3, tag:"welcome", tagtxt:"Bind",
+     list:"Salt commanded upon every offering · the Sabbath bread dipped in salt · the everlasting covenant unbroken (Lev. 2:13) — your spill scatters the very token of the bond.",
+     active:{interior:true,threshold:true}},
+    {r:"VIII", name:"The Roman Sal", kinds:4, tag:"ward", tagtxt:"Sanctify",
+     list:"Mola salsa, the salted meal of every sacrifice · the salarium that paid the legions · the salt set out for the guest · the Vestals' holy grain — Rome's whole order rests on it.",
+     active:{interior:true,threshold:true}}
+  ];
+
+  // ---- tally-mark glyph (groups of five, struck) ----
+  function tallySVG(n){
+    var groups=Math.floor(n/5), rem=n%5, x=0, parts=[], W=0;
+    function bars(count,ox,struck){
+      var s="";
+      for(var i=0;i<count;i++){ var bx=ox+i*4; s+='<line x1="'+bx+'" y1="2" x2="'+bx+'" y2="16"/>'; }
+      if(struck){ s+='<line x1="'+(ox-2)+'" y1="14" x2="'+(ox+4*4-2)+'" y2="4"/>'; }
+      return s;
+    }
+    for(var g=0;g<groups;g++){ parts.push(bars(4,x+2,true)); x+=22; }
+    if(rem){ parts.push(bars(rem,x+2,false)); x+=rem*4+4; }
+    W=x;
+    return '<svg class="tally" viewBox="0 0 '+(W||4)+' 18" width="'+(W||4)+'" height="18" '+
+      'stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none" aria-hidden="true">'+
+      parts.join("")+'</svg>';
+  }
+
+  // ---- state ----
+  var state={ grains:6500000, rate:1, place:"threshold" };
+
+  function fmt(n){
+    if(n>=1e9) return (n/1e9).toFixed(2).replace(/\.?0+$/,"")+" billion";
+    if(n>=1e6) return (n/1e6).toFixed(2).replace(/\.?0+$/,"")+" million";
+    return Math.round(n).toLocaleString("en-US");
+  }
+  function fmtInt(n){ return Math.round(n).toLocaleString("en-US"); }
+
+  function paintCats(){
+    var tb=document.getElementById("catbody");
+    tb.innerHTML = CATS.map(function(c){
+      var on=c.active[state.place];
+      return '<tr class="'+(on?"":"dim")+'">'+
+        '<td class="roman">'+c.r+'</td>'+
+        '<td><span class="cat-name">'+c.name+'</span>'+
+            '<span class="cat-list">'+c.list+'</span></td>'+
+        '<td class="num">'+tallySVG(c.kinds)+'</td>'+
+        '<td class="num"><span class="tag '+c.tag+'">'+c.tagtxt+'</span></td>'+
+        '</tr>';
+    }).join("");
+  }
+
+  function paintSum(){
+    var per = state.grains * state.rate;          // years for one revenant
+    var grand = per * 6;                            // across the 6 bound kinds
+    document.getElementById("grandsum").textContent = fmt(grand);
+    document.getElementById("perentity").textContent = fmt(per);
+    document.getElementById("graincount").textContent = fmtInt(state.grains);
+  }
+
+  function wire(groupId, attr, key, cast){
+    var grp=document.getElementById(groupId);
+    grp.addEventListener("click",function(e){
+      var b=e.target.closest("button"); if(!b||!grp.contains(b)) return;
+      [].forEach.call(grp.querySelectorAll("button"),function(x){x.setAttribute("aria-pressed","false");});
+      b.setAttribute("aria-pressed","true");
+      state[key]=cast(b.getAttribute(attr));
+      paintSum(); paintCats();
+    });
+  }
+
+  wire("grp-amount","data-grains","grains",Number);
+  wire("grp-rate","data-rate","rate",Number);
+  wire("grp-place","data-place","place",String);
+
+  // ---- the reckoning of powers ----
+  // bucket: pleased | contested | offended ; rake:"pleased" means the dawn rake wins them over
+  var DEITIES = [
+    {n:"Salacia", t:"Roman", b:"pleased", w:"Goddess of the salt sea — her very name is sal. Her own substance, scattered upon your floor."},
+    {n:"Neptune & Poseidon", t:"Greco-Roman", b:"pleased", w:"Lords of the deep; all brine is their hall, and you have spread a little of it."},
+    {n:"Huixtocihuatl", t:"Aztec", b:"pleased", w:"Goddess of salt and of the salt-makers. This is precisely the offering owed to her."},
+    {n:"Watatsumi & Shiotsuchi", t:"Japanese", b:"pleased", w:"The sea-dragon lord and the Old Man of the Tide, keepers of the salt-water road."},
+    {n:"Njörðr, Ægir & Rán", t:"Norse", b:"pleased", w:"The sea-powers of the North, to whom salt is simply home."},
+    {n:"Varuna & Samudra", t:"Vedic", b:"pleased", w:"Lord of the cosmic waters and the churned ocean itself."},
+    {n:"Yemoja", t:"Yoruba", b:"pleased", w:"Mother of waters; the salt ocean is her very body."},
+    {n:"Manannán mac Lir", t:"Celtic", b:"pleased", w:"Rider of the salt waves that divide the living from the otherworld."},
+    {n:"Aphrodite & Venus", t:"Greco-Roman", b:"pleased", w:"Born of the salt sea-foam — the brine is the cradle she rose from."},
+    {n:"Auðumbla", t:"Norse", b:"pleased", w:"The primeval cow who licked the salt-rime and freed the first god. Salt stands at the root of creation."},
+
+    {n:"YHWH", t:"Hebrew", b:"contested", w:"The covenant of salt is everlasting and salt is commanded upon every offering — yet this is no altar, only a kitchen floor."},
+    {n:"The Shinto Kami", t:"Japanese", b:"contested", rake:"pleased", w:"A raked cone of salt purifies and invites fortune; a chaotic spill is a fumbled rite — until you cone it."},
+    {n:"Set / Typhon", t:"Egyptian", b:"contested", w:"Salt is named the foam of Typhon, his own substance loosed abroad — a favor done, but by a disreputable hand."},
+
+    {n:"Annapurna", t:"Hindu", b:"offended", w:"Goddess of nourishment; to fling her bounty upon the ground is to slight the hand that feeds."},
+    {n:"Lakshmi", t:"Hindu", b:"offended", w:"Fortune squandered — a precious good cast down and wasted."},
+    {n:"The Domovoi", t:"Slavic", b:"offended", w:"Bread and salt is the sacred welcome; spilt, it foretells a quarrel at the hearth he guards."},
+    {n:"The Lares & Penates", t:"Roman", b:"offended", w:"Household gods of the threshold and the table, affronted by salt flung carelessly down."},
+    {n:"Zeus Xenios", t:"Greek", b:"offended", w:"Warden of guest-friendship; the salt-bond shared between host and guest, heedlessly broken."},
+    {n:"Isis & Osiris", t:"Egyptian", b:"offended", w:"To the pure cult, salt is Typhonic taint — its loosing offends the Osirian rite."}
+  ];
+
+  var deityState={ raked:false };
+
+  function bucketsNow(){
+    return DEITIES.map(function(d){
+      var b=d.b;
+      if(deityState.raked && d.rake) b=d.rake;
+      return {d:d, b:b, moved:(deityState.raked && d.rake)};
+    });
+  }
+
+  function paintPowers(){
+    var rows=bucketsNow();
+    var groups={pleased:[],contested:[],offended:[]};
+    rows.forEach(function(r){ groups[r.b].push(r); });
+
+    var P=groups.pleased.length, C=groups.contested.length, O=groups.offended.length;
+    document.getElementById("n-pleased").textContent=P;
+    document.getElementById("n-contested").textContent=C;
+    document.getElementById("n-offended").textContent=O;
+    document.getElementById("t-pleased").innerHTML=tallySVG(P);
+    document.getElementById("t-contested").innerHTML=tallySVG(C);
+    document.getElementById("t-offended").innerHTML=tallySVG(O);
+
+    var net=P-O;
+    var sign=net>0?"+"+net:(net<0?String(net):"even");
+    var pend = C>0 ? (" &nbsp;·&nbsp; <b>"+C+"</b> still hang in the balance"+(deityState.raked?"":", awaiting your dawn rake")) : "";
+    document.getElementById("netline").innerHTML =
+      "Net divine standing: <b>"+sign+"</b> — you have pleased <b>"+P+"</b> powers and offended <b>"+O+"</b>"+pend+".";
+
+    var labels={pleased:"Pleased",contested:"In the balance",offended:"Offended"};
+    document.getElementById("powers").innerHTML =
+      ["pleased","contested","offended"].map(function(key){
+        var items=groups[key].map(function(r){
+          return '<div class="deity'+(r.moved?" moved":"")+'">'+
+                   '<span class="dn">'+r.d.n+'</span>'+
+                   '<span class="dt">'+r.d.t+'</span>'+
+                   '<span class="dw">'+r.d.w+'</span>'+
+                 '</div>';
+        }).join("");
+        return '<div class="pcol '+key+'"><h3>'+labels[key]+'<span class="c">'+groups[key].length+'</span></h3>'+items+'</div>';
+      }).join("");
+  }
+
+  var rakeGrp=document.getElementById("grp-rake");
+  rakeGrp.addEventListener("click",function(e){
+    var b=e.target.closest("button"); if(!b||!rakeGrp.contains(b)) return;
+    [].forEach.call(rakeGrp.querySelectorAll("button"),function(x){x.setAttribute("aria-pressed","false");});
+    b.setAttribute("aria-pressed","true");
+    deityState.raked = (b.getAttribute("data-rake")==="yes");
+    paintPowers();
+  });
+
+  // ---- focused sub-reckonings: Egypt & Mesopotamia ----
+  var EGYPT = [
+    {n:"Anubis", t:"The Embalmer", b:{common:"contested",natron:"pleased"},
+     w:"Lord of natron, the divine salt of embalming. True netjry delights him; common table-salt is simply not his sacred substance."},
+    {n:"Osiris", t:"The Risen Lord", b:{common:"offended",natron:"pleased"},
+     w:"Natron preserved and raised him — but sea-salt is the foam of Typhon, his own murderer, loosed before the resurrected king."},
+    {n:"Isis", t:"The Mourner", b:{common:"offended",natron:"pleased"},
+     w:"Natron purifies the rite she keeps; common salt is Typhonic taint scattered in her sacred presence."},
+    {n:"Thoth", t:"Scribe of Rites", b:{common:"contested",natron:"pleased"},
+     w:"Natron serves the ordered rites of measure he governs; a careless scatter is merely disorder before the god of reckoning."},
+    {n:"The Wab-Priests", t:"The Pure Cult", b:{common:"offended",natron:"pleased"},
+     w:"Sworn to abstain from salt in their purity, as Plutarch records — and spilt common salt breaks the very taboo they keep."},
+    {n:"Set / Typhon", t:"The Disreputable", b:{common:"pleased",natron:"offended"},
+     w:"Salt is named his own foam; common salt loosed is his substance set free — yet divine natron is a purifier raised against him."}
+  ];
+
+  var MESO = [
+    {n:"The Numen of Salt", t:"“Born in a Pure Place”", b:"pleased",
+     w:"Addressed as a power in its own right in the Maqlû rite — your spill is an impromptu working that dissolves any witchcraft laid upon you."},
+    {n:"Enki / Ea", t:"Lord of Incantation", b:"pleased",
+     w:"Master of purification and the cleansing waters; the salt-rite is his very craft."},
+    {n:"Marduk", t:"Orderer of the World", b:"pleased",
+     w:"He built the cosmos from the body of the salt-sea; purifying salt upholds the order he won."},
+    {n:"Enlil", t:"Who Apportions", b:"contested",
+     w:"He destined salt to be the food of the gods; its presence honors his decree, but its waste tempts him."},
+    {n:"Tiamat", t:"The Primordial Brine", b:"contested",
+     w:"The salt-water mother, slain to make heaven and earth — you have scattered a little of her very body, and the old deep stirs."}
+  ];
+
+  var egyptState={ salt:"common" };
+
+  function triptych(containerId, items){
+    var groups={pleased:[],contested:[],offended:[]};
+    items.forEach(function(it){ groups[it.b].push(it); });
+    var labels={pleased:"Pleased",contested:"In the balance",offended:"Offended"};
+    document.getElementById(containerId).innerHTML =
+      ["pleased","contested","offended"].map(function(key){
+        if(!groups[key].length) return "";
+        var inner=groups[key].map(function(it){
+          return '<div class="deity"><span class="dn">'+it.n+'</span>'+
+                 '<span class="dt">'+it.t+'</span>'+
+                 '<span class="dw">'+it.w+'</span></div>';
+        }).join("");
+        return '<div class="pcol '+key+'"><h3>'+labels[key]+'<span class="c">'+groups[key].length+'</span></h3>'+inner+'</div>';
+      }).join("");
+    var net=groups.pleased.length-groups.offended.length;
+    return net>0?"+"+net:(net<0?String(net):"even");
+  }
+
+  function renderEgypt(){
+    var items=EGYPT.map(function(d){ return {n:d.n,t:d.t,w:d.w,b:d.b[egyptState.salt]}; });
+    document.getElementById("egy-net").textContent = "Net "+triptych("egy-powers",items);
+  }
+  function renderMeso(){
+    document.getElementById("meso-net").textContent = "Net "+triptych("meso-powers",MESO);
+  }
+
+  var egySalt=document.getElementById("grp-egy-salt");
+  egySalt.addEventListener("click",function(e){
+    var b=e.target.closest("button"); if(!b||!egySalt.contains(b)) return;
+    [].forEach.call(egySalt.querySelectorAll("button"),function(x){x.setAttribute("aria-pressed","false");});
+    b.setAttribute("aria-pressed","true");
+    egyptState.salt=b.getAttribute("data-salt");
+    renderEgypt();
+  });
+
+  // dateline flavor
+  document.getElementById("dateline").textContent =
+    "Entered " + new Date().toLocaleDateString("en-US",{year:"numeric",month:"long",day:"numeric"});
+
+  paintCats(); paintSum(); paintPowers(); renderEgypt(); renderMeso();
+})();
+</script>
+</body>
+</html>
